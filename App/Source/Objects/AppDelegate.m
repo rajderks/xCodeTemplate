@@ -5,12 +5,10 @@
 //  Copyright (c) 2015 GraafICT. All rights reserved.
 //
 
-#import "Timer.h"
 #import "Constants.h"
 #import "AppDelegate.h"
 #import "BDGScreenshot.h"
 #import "NotificationsManager.h"
-#import "DTTJailbreakDetection.h"
 
 @interface AppDelegate ()
 {
@@ -27,22 +25,11 @@
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //Check jailbreak
-    if([DTTJailbreakDetection isJailbroken]) {
-        [NotificationsManager showMessage:NSLocalizedString(@"Jailbrake_Popup_Title", @"") fromViewController:self.window.rootViewController];        
-    }
-    
-    //Data protection
-    #warning Based on App Privacy -> Turn on Data Protection in Target Capabilities
-    
     //Appearance
     [AppAppearance setupAppearance];
     
     //Data
     [AppData setupAppData];
-    
-    //Timer
-    [self setupTimer];
     
     //Register for notifications
     [NotificationsManager registerForNotificationsOnLaunch];
@@ -58,33 +45,6 @@
 -(void)continueLaunchFlow
 {
     
-}
-
-#pragma mark - Timer
-
--(void)setupTimer
-{
-    [[Timer sharedTimer] setTimerTicked:^{
-        /* EXAMPLE CODE
-        //Tabbarcontroller?
-        if(![self.window.rootViewController isKindOfClass:[UITabBarController class]]) {
-            return;
-        }
-        
-        //Overzicht?
-        UITabBarController *tabbarController = (UITabBarController *)self.window.rootViewController;
-        if(tabbarController.selectedIndex != TabOverzicht) {
-            return;
-        }
-        
-        UINavigationController *nav = (UINavigationController *)tabbarController.selectedViewController;
-        if(![nav.visibleViewController isKindOfClass:[OverzichtViewController class]]) {
-            return;
-        }
-        
-        OverzichtViewController *vc = (OverzichtViewController *)nav.visibleViewController;
-        [vc updatePijnMonitorTimer];*/
-    }];
 }
 
 #pragma mark RootViewController animated
