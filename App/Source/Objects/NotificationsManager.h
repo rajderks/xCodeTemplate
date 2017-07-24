@@ -25,5 +25,6 @@
 //Message
 +(void)showMessage:(NSString *)message fromViewController:(UIViewController *)viewController;
 +(void)showMessage:(NSString *)title message:(NSString *)message fromViewController:(UIViewController *)viewController;
++(void)showMessage:(NSString *)title message:(NSString *)message actions:(NSArray<UIAlertAction*>*)actions fromViewController:(UIViewController *)viewController;
 
 @end

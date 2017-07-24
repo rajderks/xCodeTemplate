@@ -98,6 +98,16 @@
     CFRunLoopWakeUp(CFRunLoopGetCurrent());
 }
 
++(void)showMessage:(NSString *)title message:(NSString *)message actions:(NSArray<UIAlertAction*>*)actions fromViewController:(UIViewController *)viewController
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    for(UIAlertAction *action in actions) {
+        [alertController addAction:action];
+    }
+    [viewController presentViewController:alertController animated:TRUE completion:nil];
+    CFRunLoopWakeUp(CFRunLoopGetCurrent());
+}
+
 @end
 
 

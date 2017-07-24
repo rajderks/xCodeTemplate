@@ -10,13 +10,6 @@
 @interface UIColor (App)
 
 //App Colors
-+(UIColor *)appGreenColor;
-+(UIColor *)appLightTextColor;
-+(UIColor *)appDarkerTextColor;
-+(UIColor *)appUltraLightTextColor;
-+(UIColor *)appSeparatorColor;
-+(UIColor *)appDarkTextColor;
-+(UIColor *)appTabBarColor;
 
 //Utilities
 +(UIImage *)imageFromColor:(UIColor *)color;

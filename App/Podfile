@@ -10,10 +10,10 @@ def shared_pods
     pod 'BDGScreenshot'
     
     pod 'Blaze'
+    pod 'SynappzAPI'
     pod 'AFNetworking'
     pod 'SVProgressHUD'
     pod 'HockeySDK-Source'
-    pod 'DTTJailbreakDetection'
 end
 
 target 'Template' do
